@@ -1,0 +1,91 @@
+
+html {
+    box-sizing: border-box;}
+   
+   *,::after,::before
+   {box-sizing: inherit;}
+   
+   .body {
+       /*color: rgb(44, 35, 37);
+      
+       max-width: 500px;
+       height: 100%;
+       border-style:  dotted ;
+       border-color: rgb(15, 13, 15);
+       border-width:  10px 5px;
+       border-bottom-color: rgb(88, 84, 84);
+       border-radius: 30px 50px;
+       padding: 100px 50px;
+       margin: 50px auto;
+       text-shadow: 1px 1px 5px red;
+       padding: 10px 10px
+       font-size: 20px;*/
+       line-height: 1.5;
+        background-image: url("/images/banknoty.jpg");
+        background-size: cover;
+       font-family:  'Lato', sans-serif;
+       font-style: italic;
+       display: flex;
+       background-repeat: repeat;
+       background-position: center;
+   }
+   
+   .container{
+   max-width: 700px;
+   margin: 0px auto;
+   padding: 0 20px;
+   background-color: antiquewhite;
+   
+   }
+   
+   .form{
+   
+   }
+   .form__labelText{
+   display: inline-block;
+   max-width: 150px;
+   width: 100%;
+   margin-right: 5px;
+   }
+   
+   .form__field{
+   border: 2px solid rgb(16, 116, 39);
+   padding: 10px;
+   max-width: 400px;
+   width: 100%;
+   border-radius: 5px;
+   }
+   .form__field:invalid{
+   
+       background-color: brown;
+   }
+   .form__button{
+       width: 100%;
+       background-color: rgb(80, 185, 35);
+       border: none;
+       padding: 10px;
+       border-radius: 5px;
+   }
+   .form__button:hover{
+       background-color: rgb(165, 195, 153);
+    
+   }
+   
+   .form__button:active{
+       background-color: rgb(221, 224, 220);
+    
+   }
+   
+   .form__fieldset{
+   border: 1px solid rgb(22, 234, 7);
+   padding: 20px;
+   border-radius: 5px;
+   margin: 20px 0;
+   }
+   
+   .form__legend{
+       background-color: rgb(28, 116, 19);
+       border-radius: 5px;
+       padding: 5px;
+       color: azure;
+   }
