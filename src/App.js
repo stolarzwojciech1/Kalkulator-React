@@ -8,6 +8,7 @@ function App({result}) {
     <body className="body">
     <div className="container">
    <p> Przelicz Euro na USD</p>
+  
 <Form result={result}/>
 
 </div>

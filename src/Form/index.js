@@ -2,19 +2,16 @@ import React from "react";
 import "./style.css"
 import { useState } from "react";
 
-const result = () =>{
-
-
-return "sss";
-
-}
-
-
-
 
 const Form= ()=>{
+    const [amount, setAmount] = useState("1");
+    const [amount2, setCurrency] = useState("4.73");
+    
 
-const [amount, setAmount] = useState("");
+
+
+   
+
 return(
 
 
@@ -27,7 +24,7 @@ return(
         <input 
 
 onChange={({ target }) => setAmount(target.value)}
-        value={1}
+        value={amount}
         className="js-usd form__field" 
         type="number"  
         min="0" 
@@ -39,7 +36,13 @@ onChange={({ target }) => setAmount(target.value)}
         </p>
         <p>
         <label><span className="form__labelText" >Aktualny kurs </span>
-        <input className="js-euro form__field" type="number" value="4.71" step="0.01" required/></label>
+        <input
+        onChange={({ target }) => setCurrency(target.value)}
+        className="js-euro form__field" 
+        type="number" 
+        value={amount2 }
+        step="0.01" 
+        required/></label>
         
         </p>
 </fieldset>
@@ -47,12 +50,16 @@ onChange={({ target }) => setAmount(target.value)}
     <p><button
      
      className="form__button">Policz</button></p>
-    <p>USD: <strong className="js-value">{result}</strong></p>
+    <p>USD: <strong className="js-value">
+         
+         </strong></p>
+
+
 </form>
 
 
 
 )};
-console.log(target);
+
 
 export default Form;

@@ -28,17 +28,23 @@ html {
        display: flex;
        background-repeat: repeat;
        background-position: center;
+       min-height: 100vh;
+      
    }
    
    .container{
-   max-width: 700px;
-   margin: 0px auto;
+   max-width: 800px;
+   margin: auto auto;
    padding: 0 20px;
    background-color: antiquewhite;
+  
+   height: 50%;
    
    }
    
    .form{
+
+    
    
    }
    .form__labelText{
@@ -89,3 +95,5 @@ html {
        padding: 5px;
        color: azure;
    }
+   
+ 
