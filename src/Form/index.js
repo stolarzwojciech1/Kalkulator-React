@@ -51,7 +51,7 @@ onChange={({ target }) => setAmount(target.value)}
      
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         
+         {amount2 *amount}
          </strong></p>
 
 
