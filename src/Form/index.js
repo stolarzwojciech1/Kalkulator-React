@@ -6,20 +6,25 @@ import { useState } from "react";
 const Form= ()=>{
     const [amount, setAmount] = useState("1");
      const [amount2, setCurrency] = useState("4.73");
-   const [amount3, setAmount3] = useState("0");
-
+   
+   const [amount3, setAmount3] = useState("2");
+   
 const increase =()=> {
-setAmount3(amount3+1)
+setAmount3(amount*amount2)
 
 }
-
+   
+const onSubmit = (event) => {
+    event.preventDefault();
+    increase();
+  };
    
 
 return(
 
 
 
-<form className="form">
+<form className="form" onSubmit={onSubmit}>
     <fieldset className="form__fieldset">
     <legend className="form__legend">Twoje dane</legend>
     <p>
@@ -51,10 +56,9 @@ onChange={({ target }) => setAmount(target.value)}
 </fieldset>
     
     <p><button
-     onClick ={increase}
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         {amount2 *amount} {amount3}
+         {amount3.toFixed(2)}
          </strong></p>
 
 
