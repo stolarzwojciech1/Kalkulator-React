@@ -7,17 +7,16 @@ const Form= ()=>{
     const [amount, setAmount] = useState("1");
      const [amount2, setCurrency] = useState("4.73");
    
-   const [amount3, setAmount3] = useState("2");
+   const [amount3, setAmount3] = useState(amount*amount2);
    
 const increase =()=> {
-setAmount3(amount*amount2)
-
+setAmount3((amount*amount2).toFixed(2))
 }
    
 const onSubmit = (event) => {
-    event.preventDefault();
-    increase();
-  };
+  event.preventDefault();
+  increase();
+};
    
 
 return(
@@ -58,7 +57,7 @@ onChange={({ target }) => setAmount(target.value)}
     <p><button
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         {amount3.toFixed(2)}
+         {amount3}
          </strong></p>
 
 
