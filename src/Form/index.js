@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css"
 import { useState } from "react";
+import { currencies } from "../currencies"
 
 
 const Form= ()=>{
@@ -17,7 +18,24 @@ const onSubmit = (event) => {
   event.preventDefault();
   increase();
 };
+
+const [currencySelect, setCurrencySelect] = useState(currencies[0]);
+const [result, setResult] = useState({
+  finalResult: "",
+  baseValue: 0,
+  currency: null,
+});
+
+const onCurrencyChange = ({ target }) => {
+  const nameOfCurrency = target.value;
+  const selected = currencies.find((currency) => currency.name === nameOfCurrency);
+  setCurrencySelect(selected);
+  console.log(`Została wybrana waluta ${selected.code}`);
+};
    
+  
+
+
 
 return(
 
@@ -52,6 +70,14 @@ onChange={({ target }) => setAmount(target.value)}
         required/></label>
         
         </p>
+        <select onChange={onCurrencyChange} className="form__select">
+      {currencies.map(currency => (
+        <option key={currency.name}>
+          {currency.name}
+        </option>
+      ))}
+    </select>
+
 </fieldset>
     
     <p><button
