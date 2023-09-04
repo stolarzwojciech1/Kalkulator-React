@@ -20,19 +20,8 @@ const onSubmit = (event) => {
 };
 
 
-
-const onCurrencyChange = ({ target }) => {
-  const nameOfCurrency = target.value;
-  const selected = currencies.find((currency) => currency.name === nameOfCurrency);
-  
-  console.log(`Została wybrana waluta ${selected.name}`);
-};
-   
-  
-
-
-
 return(
+
 
 
 
@@ -65,7 +54,7 @@ onChange={({ target }) => setAmount(target.value)}
         required/></label>
         
         </p>
-        <select   onChange={onCurrencyChange()} className="form__select">
+        <select    className="form__select">
       {currencies.map(currency => (
         <option key={currency.name}>
           {currency.name}
@@ -79,7 +68,7 @@ onChange={({ target }) => setAmount(target.value)}
     <p><button
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         {amount3}
+         {}
       
          </strong></p>
 
