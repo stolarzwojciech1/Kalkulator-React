@@ -7,21 +7,34 @@ import { currencies } from "../currencies"
 const Form= ()=>{
     const [amount, setAmount] = useState("1");
      const [amount2, setCurrency] = useState("4.73");
-     const [amount3, setAmount3] = useState(amount*amount2);
+   const [amount3, setAmount3] = useState(amount*amount2);
+   const [currency, setCurrency2] = useState(currencies[0].code);
 
+
+   const calculateResult = (currency, amount) => {
+    const rate = currencies.find(
+      ({ rate }) => rate === currency
+    ).rate;
+    }
 
 const increase =()=> {
-setAmount3((amount*amount2).toFixed(2))
+setAmount3((amount*amount2).toFixed(2));
+calculateResult();
+
 }
    
+
+
 const onSubmit = (event) => {
   event.preventDefault();
   increase();
 };
 
+console.log(currencies[0].code);  
+
+
 
 return(
-
 
 
 
@@ -43,18 +56,8 @@ onChange={({ target }) => setAmount(target.value)}
         </label>
         
         </p>
-        <p>
-        <label><span className="form__labelText" >Aktualny kurs </span>
-        <input
-        onChange={({ target }) => setCurrency(target.value)}
-        className="js-euro form__field" 
-        type="number" 
-        value={amount2 }
-        step="0.01" 
-        required/></label>
         
-        </p>
-        <select    className="form__select">
+        <select  value={currency} onChange={({ target }) => setCurrency(target.value)} className="form__select">
       {currencies.map(currency => (
         <option key={currency.name}>
           {currency.name}
@@ -68,7 +71,7 @@ onChange={({ target }) => setAmount(target.value)}
     <p><button
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         {}
+         {amount3}
       
          </strong></p>
 

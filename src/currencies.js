@@ -3,7 +3,7 @@ const currencies = [
         name: "€ Euro",
         mark: "€",
         code: "EUR",
-        rate: 4.45,
+        rate: 4.33,
     },
     {
         name: "$ Dolar amerykański",
