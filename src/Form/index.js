@@ -2,26 +2,27 @@ import React from "react";
 import "./style.css"
 import { useState } from "react";
 import { currencies } from "../currencies"
-
+import Result from "../Result";
 
 const Form= ()=>{
     const [amount, setAmount] = useState("1");
-   const [currency, setCurrency2] = useState(currencies[0].code);
-   const [result, setResult] = useState();
-
-   const calculateResult = (currency, amount) => {
-    const rate = currencies.find(
-      ({ name }) => name === currency).rate;
-
-      setResult({
-      
-        rate,
-      });
-    };
-
-
+   const [currency, setCurrency2] = useState();
+   const [result, setResult] = useState("");
   
+
+   const calculateResult = () => {
+    const aaa = 0;
+    const rate = currencies.find((currency) => currency.name === aaa).rate;
     
+    setResult({
+      currency: (currency),
+  rate:{rate},
+  });
+
+      
+    
+    
+    };
 
 const increase =()=> {
 
@@ -76,10 +77,11 @@ onChange={({ target }) => setAmount(target.value)}
     <p><button
      className="form__button">Policz</button></p>
     <p>USD: <strong className="js-value">
-         {result}
+    <Result
+                    result={result}
+                />
       
          </strong></p>
-
 
 </form>
 
