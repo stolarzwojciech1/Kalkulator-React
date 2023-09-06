@@ -1,12 +1,15 @@
-const Result = ({ result }) => (
-    <p ><span>Kwota wynosi: </span> <strong>
-        {result
-            ? `${result} `
-            : ""
-        }
-    </strong>
-    </p>
-);
 
+
+const Result = ({ result }) => (
+    <div className="result">Result:
+        {result && (
+            <>
+                <strong>
+                    {result.resultCalc} 
+                </strong>
+            </>
+        )}
+    </div>
+);
 
 export default Result;

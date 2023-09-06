@@ -6,20 +6,20 @@ import Result from "../Result";
 
 const Form= ()=>{
     const [amount, setAmount] = useState("1");
-   const [currency, setCurrency2] = useState();
-   const [result, setResult] = useState("");
+   const [currency, setCurrency2] = useState("2");
+   const [result, setResult] = useState("1");
   
 
-   const calculateResult = (currency) => {
+   const calculateResult = (currency, currencies,amount) => {
    
-    const rate = currencies.find((name) => name === currency).rate;
- 
-console.log(rate);
+    const rate = currencies.find(({name}) =>name === currency).rate;
+   
 
 setResult({
-  currency: (currency),
-rate:{rate},
+  
+resultCalc: amount / rate,
 });
+
 
       
     
